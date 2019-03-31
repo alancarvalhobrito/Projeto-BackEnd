@@ -8,23 +8,20 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "tb_telefone")
+@Table(name = "tb_email")
 @Getter
 @Setter
-public class Telefone implements Serializable {
+public class Email implements Serializable {
 
-    private static final long serialVersionUID = 7110508136977106193L;
+    private static final long serialVersionUID = 7457830539048611750L;
 
     @Id
-    @Column(name="id_telefone")
+    @Column(name="id_email")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="numero")
-    private String numero;
-
-    @Column(name="tipo")
-    private String tipo;
+    @Column(name="email")
+    private String email;
 
     @ManyToOne
     @JsonBackReference(value = "cliente")

@@ -36,8 +36,8 @@ public class ClienteService {
     }
 
     @Transactional
-    public Cliente update(Integer id, Cliente cliente){
-        Cliente clienteEncontrado = findById(id);
+    public Cliente update(Cliente cliente){
+        Cliente clienteEncontrado = findById(cliente.getId());
         if (clienteEncontrado != null) {
             cliente.getTelefones().forEach( t -> {
                 t.setCliente(cliente);

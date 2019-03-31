@@ -37,9 +37,9 @@ public class ClienteController {
         return ResponseEntity.badRequest().build();
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody Cliente cliente){
-        Cliente clienteSalvo = clienteService.update(id, cliente);
+    @PutMapping("/editarCliente")
+    public ResponseEntity<?> update(@RequestBody Cliente cliente){
+        Cliente clienteSalvo = clienteService.update(cliente);
         if (clienteSalvo != null) return ResponseEntity.ok(clienteSalvo);
         return ResponseEntity.badRequest().build();
     }

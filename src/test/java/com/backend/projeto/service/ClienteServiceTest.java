@@ -58,7 +58,7 @@ public class ClienteServiceTest {
         Optional<Cliente> clienteOptional = Optional.of(cliente);
         given(clienteRepository.findById(anyInt())).willReturn(clienteOptional);
         given(cliente.getTelefones()).willReturn(Arrays.asList(new Telefone()));
-        assertNotNull(clienteService.update(1, cliente));
+        assertNotNull(clienteService.update(cliente));
 
     }
 

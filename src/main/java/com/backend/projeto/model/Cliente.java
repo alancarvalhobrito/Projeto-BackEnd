@@ -14,8 +14,8 @@ import java.util.List;
 @Setter
 public class Cliente implements Serializable {
 
-
     private static final long serialVersionUID = 6320542328154192831L;
+
     @Id
     @Column(name="id_cliente")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,4 +34,8 @@ public class Cliente implements Serializable {
     @OneToMany(mappedBy="cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference(value = "cliente")
     private List<Telefone> telefones;
+
+    @OneToMany(mappedBy="cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference(value = "cliente")
+    private List<Email> emails;
 }

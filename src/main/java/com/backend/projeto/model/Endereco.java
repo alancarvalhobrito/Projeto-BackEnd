@@ -12,8 +12,8 @@ import java.io.Serializable;
 @Setter
 public class Endereco implements Serializable {
 
-
     private static final long serialVersionUID = 1436014352129235821L;
+
     @Id
     @Column(name="id_endereco")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
